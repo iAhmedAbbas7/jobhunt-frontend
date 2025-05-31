@@ -1,0 +1,9 @@
+// <= SHADCN UI CONFIGURATION =>
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
