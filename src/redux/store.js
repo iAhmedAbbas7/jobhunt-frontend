@@ -20,7 +20,7 @@ import {
 
 // <= REDUX-PERSIST =>
 const persistConfig = {
-  key: "root",
+  key: "JobHunt",
   version: 1,
   storage,
 };
