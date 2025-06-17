@@ -638,7 +638,7 @@ const ChatRoomPage = () => {
       const formData = new FormData();
       // APPENDING DATA TO FORM DATA OBJECT
       formData.append("text", text);
-      formData.append("parent", parent || "");
+      if (parent) formData.append("parent", parent);
       formData.append("file", file);
       // SENDING MESSAGE WITH FORM DATA
       try {
