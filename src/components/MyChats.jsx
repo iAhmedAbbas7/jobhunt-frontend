@@ -18,10 +18,6 @@ import {
 const MyChats = () => {
   // CURRENT USER CREDENTIALS
   const { user } = useSelector((store) => store.auth);
-  // GETTING CHAT DATA FROM THE CHAT SLICE
-  const { rooms, unreadCounts, onlineUsers, lastSeen } = useSelector(
-    (store) => store.chat
-  );
   // USING LOAD ROOM FUNCTION FROM USE CHAT HOOK
   const { loadRooms, loading } = useChat();
   // NAVIGATION
@@ -30,6 +26,10 @@ const MyChats = () => {
   useEffect(() => {
     loadRooms();
   }, [loadRooms]);
+  // GETTING CHAT DATA FROM THE CHAT SLICE
+  const { rooms, unreadCounts, onlineUsers, lastSeen } = useSelector(
+    (store) => store.chat
+  );
   // IF LOADING
   if (loading) {
     return (
@@ -41,7 +41,7 @@ const MyChats = () => {
     );
   }
   // IF NO CHATS
-  if (rooms.length === 0) {
+  if (!loading && rooms.length === 0) {
     return (
       <>
         <Navbar />
@@ -67,7 +67,7 @@ const MyChats = () => {
       <section className="w-full flex items-center justify-center sm:px-[2rem] px-[1rem] py-[2rem]">
         {/* MY CHATS CONTENT WRAPPER */}
         <section className="flex flex-col items-center justify-center gap-[2rem] w-full border-2 border-gray-100 rounded-xl sm:p-[2rem] p-[1rem] tracking-[0.5px]">
-          {/* HADING & CHAT REQUESTS BUTTON */}
+          {/* HEADING & CHAT REQUESTS BUTTON */}
           <div className="w-full flex items-center justify-between flex-wrap-reverse gap-[1rem]">
             <h1 className="flex items-center gap-[0.5rem] font-[600] text-gray-500 text-[2rem]">
               <MessageCircleMoreIcon className="text-color-DB w-[3rem] h-[3rem]" />{" "}

@@ -52,6 +52,32 @@ const ChatRequestPage = () => {
       </>
     );
   }
+  // IF NO REQUESTS FOR RECRUITER
+  if (!loading && user?.role === "RECRUITER" && requests.length === 0) {
+    return (
+      <>
+        <Navbar />
+        <div className="flex items-center justify-center h-[87vh]">
+          <span className="text-gray-500 bg-gray-100 px-[1rem] py-[0.5rem] rounded-lg flex items-center gap-[0.5rem] font-medium">
+            <X /> No Chat Requests at this Time
+          </span>
+        </div>
+      </>
+    );
+  }
+  // IF NO REQUESTS FOR STUDENT
+  if (!loading && user?.role === "STUDENT" && sentRequests.length === 0) {
+    return (
+      <>
+        <Navbar />
+        <div className="flex items-center justify-center h-[87vh]">
+          <span className="text-gray-500 bg-gray-100 px-[1rem] py-[0.5rem] rounded-lg flex items-center gap-[0.5rem] font-medium">
+            <X /> No Sent Chat Requests at this Time
+          </span>
+        </div>
+      </>
+    );
+  }
   // IF ERROR
   if (error) {
     return (
@@ -65,32 +91,6 @@ const ChatRequestPage = () => {
       </>
     );
   }
-  // IF NO REQUESTS FOR RECRUITER
-  if (user?.role === "RECRUITER" && requests.length === 0) {
-    return (
-      <>
-        <Navbar />
-        <div className="flex items-center justify-center h-[87vh]">
-          <span className="text-gray-500 bg-gray-100 px-[1rem] py-[0.5rem] rounded-lg flex items-center gap-[0.5rem] font-medium">
-            <X /> No Chat Requests at this Time
-          </span>
-        </div>
-      </>
-    );
-  }
-  // IF NO REQUESTS FOR STUDENT
-  if (user?.role === "STUDENT" && sentRequests.length === 0) {
-    return (
-      <>
-        <Navbar />
-        <div className="flex items-center justify-center h-[87vh]">
-          <span className="text-gray-500 bg-gray-100 px-[1rem] py-[0.5rem] rounded-lg flex items-center gap-[0.5rem] font-medium">
-            <X /> No Sent Chat Requests at this Time
-          </span>
-        </div>
-      </>
-    );
-  }
   return (
     <>
       <Navbar />
@@ -98,7 +98,7 @@ const ChatRequestPage = () => {
       <section className="w-full flex items-center justify-center sm:px-[2rem] px-[1rem] py-[2rem]">
         {/* CHAT REQUESTS PAGE CONTENT WRAPPER */}
         <section className="flex flex-col items-center justify-center gap-[2rem] w-full border-2 border-gray-100 rounded-xl sm:p-[2rem] p-[1rem] tracking-[0.5px]">
-          {/* HADING */}
+          {/* HEADING */}
           <div className="w-full flex items-center justify-start">
             <h1 className="flex items-center gap-[0.5rem] font-[600] text-gray-500 text-[2rem]">
               {" "}
