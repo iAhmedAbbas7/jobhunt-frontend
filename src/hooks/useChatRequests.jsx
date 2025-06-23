@@ -8,7 +8,7 @@ const useChatRequests = () => {
   const [requests, setRequests] = useState([]);
   const [sentRequests, setSentRequests] = useState([]);
   const [acceptedRequests, setAcceptedRequests] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   // FETCHING CHAT REQUESTS
   const fetchRequests = useCallback(async () => {

@@ -1,9 +1,9 @@
 // <= IMPORTS =>
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
-import { setRoomLastSeen, setRooms, setUnreadCounts } from "@/redux/chatSlice";
 import { useCallback, useState } from "react";
 import { CHAT_API_ENDPOINT } from "@/utils/constants";
+import { useDispatch, useSelector } from "react-redux";
+import { setRoomLastSeen, setRooms, setUnreadCounts } from "@/redux/chatSlice";
 
 const useChat = () => {
   // CURRENT USER CREDENTIALS
@@ -12,7 +12,7 @@ const useChat = () => {
   const dispatch = useDispatch();
   // CURRENT USER CREDENTIALS
   // LOADING STATE
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   // LOADING ROOMS
   const loadRooms = useCallback(async () => {
     // IF NOT USER
