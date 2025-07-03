@@ -32,7 +32,7 @@ const ArticleDescription = () => {
   const [loading, setLoading] = useState(false);
   // GETTING CURRENT LOGGED IN USER FROM AUTH SLICE
   const { user } = useSelector((store) => store.auth);
-  //SETTING USER ID
+  // SETTING USER ID
   const userId = user._id;
   // REFS FOR EACH SECTION CONTAINER
   const sectionRefs = useRef([]);
