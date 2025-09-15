@@ -139,7 +139,7 @@ const NotificationPanel = () => {
       <button
         title={`Unread ${newNotificationCount}`}
         onClick={() => setPanelVisible((prev) => !prev)}
-        className="hover:bg-color-LB text-white fixed bottom-4 right-4 bg-color-DB p-2 rounded-full border-none outline-none"
+        className="hover:bg-color-LB text-white fixed bottom-[6.5rem] right-8 bg-color-DB p-2 rounded-full border-none outline-none"
       >
         <Bell />
         {/* IF THERE ARE NEW NOTIFICATIONS AVAILABLE */}
